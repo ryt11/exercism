@@ -16,18 +16,20 @@ end
 # deb225e Implement canonical dataset for scrabble-score problem (#255)
 
 class HelloWorldTest < Minitest::Test
+  attr_reader :hw
+  def setup
+    @hw = HelloWorld.new
+  end
   def test_no_name
-    assert_equal 'Hello, World!', HelloWorld.hello
+    assert_equal 'Hello, World!', hw.hello
   end
 
   def test_sample_name
-    skip
-    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice')
+    assert_equal 'Hello, Alice!', hw.hello('Alice')
   end
 
   def test_other_sample_name
-    skip
-    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob')
+    assert_equal 'Hello, Bob!', hw.hello('Bob')
   end
 end
 
